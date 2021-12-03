@@ -32,4 +32,8 @@ const GenresImage = {
   [Genres.Scifi]: <IconScifi />,
 }
 
-export {Genres, GenresTranslate, GenresImage};
+const ActionType = {
+  setCurrentGenre: 'main/set-current-genre',
+}
+
+export {Genres, GenresTranslate, GenresImage, ActionType};
