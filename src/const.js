@@ -33,6 +33,7 @@ const GenresImage = {
 }
 
 const ActionType = {
+  setQuests: 'data/set-quests',
   setCurrentGenre: 'main/set-current-genre',
 }
 

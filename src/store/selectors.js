@@ -1,3 +1,4 @@
 const getCurrentGenre = (state) => state.currentGenre;
+const getQuests = (state) => state.quests;
 
-export {getCurrentGenre};
+export {getCurrentGenre, getQuests};

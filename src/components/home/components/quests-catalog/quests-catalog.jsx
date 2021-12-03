@@ -1,13 +1,13 @@
 import * as S from './quests-catalog.styled';
 import QuestCard from '../quest-card/quest-card';
-import { quests } from 'mock/mock';
 import { Genres } from 'const';
 import GenreItem from '../genre-item/genre-item';
 import { useSelector } from "react-redux";
-import { getCurrentGenre } from 'store/selectors';
+import { getCurrentGenre, getQuests } from 'store/selectors';
 
 const QuestsCatalog = () => {
   const currentGenre = useSelector(getCurrentGenre);
+  const quests = useSelector(getQuests);
 
   return (
     <>
