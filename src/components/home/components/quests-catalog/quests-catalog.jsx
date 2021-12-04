@@ -3,11 +3,11 @@ import QuestCard from '../quest-card/quest-card';
 import { Genres } from 'const';
 import GenreItem from '../genre-item/genre-item';
 import { useSelector } from "react-redux";
-import { getCurrentGenre, getQuests } from 'store/selectors';
+import { getCurrentGenre, getQuestsInCurrentGenre } from 'store/selectors';
 
 const QuestsCatalog = () => {
   const currentGenre = useSelector(getCurrentGenre);
-  const quests = useSelector(getQuests);
+  const quests = useSelector(getQuestsInCurrentGenre);
 
   return (
     <>
