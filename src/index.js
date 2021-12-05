@@ -6,6 +6,8 @@ import App from 'components/app/app';
 import { reducer } from 'store/reducer';
 import { createAPI } from 'services/api';
 import { fetchQuestsAction } from 'store/api-actions';
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const api = createAPI();
 
@@ -24,6 +26,7 @@ store.dispatch(fetchQuestsAction());
 render(
   <StrictMode>
     <Provider store={store}>
+      <ToastContainer />
       <App />
     </Provider>
   </StrictMode>,

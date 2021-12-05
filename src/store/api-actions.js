@@ -1,5 +1,9 @@
 import { Genres } from "const";
 import { setCurrentQuest, setQuests } from "./actions";
+import {toast} from 'react-toastify';
+
+const SUCCES_SEND_ORDER_MESSAGE = 'Ваш заказ отправлен';
+const ERROR_SEND_ORDER_MESSAGE = 'Ошибка отправки заказа';
 
 const GenresAdapter = {
   'adventures' : Genres.Adventures,
@@ -27,4 +31,20 @@ const fetchCurrentQuestAction = (questId) =>
       .then(response => dispatch(setCurrentQuest(response)));
   };
 
-export {fetchQuestsAction, fetchCurrentQuestAction};
+const sendNewOrderAction = (orderPost, closeForm) =>
+  async (_dispatch, _getState, api) => {
+    try{
+      await api.post('/orders', orderPost)
+      .then((response) => {
+        console.log(response)
+        if(response){
+          toast.info(SUCCES_SEND_ORDER_MESSAGE);
+          closeForm();
+        }
+      });
+    } catch {
+      toast.error(ERROR_SEND_ORDER_MESSAGE)
+    }
+  };
+
+export {fetchQuestsAction, fetchCurrentQuestAction, sendNewOrderAction};
