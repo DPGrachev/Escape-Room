@@ -23,6 +23,12 @@ const GenresTranslate = {
   [Genres.Scifi]: 'Sci-fi',
 }
 
+const questLevelTranslate = {
+  'hard' : 'Сложный',
+  'medium' : 'Средний',
+  'easy' : 'Простой',
+}
+
 const GenresImage = {
   [Genres.AllQuests]: <IconAllQuests />,
   [Genres.Adventures]: <IconAdventures />,
@@ -34,7 +40,8 @@ const GenresImage = {
 
 const ActionType = {
   setQuests: 'data/set-quests',
+  setCurrentQuest: 'data/set-current-quest',
   setCurrentGenre: 'main/set-current-genre',
 }
 
-export {Genres, GenresTranslate, GenresImage, ActionType};
+export {Genres, GenresTranslate, GenresImage, ActionType, questLevelTranslate};

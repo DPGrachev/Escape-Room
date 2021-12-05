@@ -19,4 +19,13 @@ const setQuests = createAction(
   })
 )
 
-export {setCurrentGenre, setQuests};
+const setCurrentQuest = createAction(
+  ActionType.setCurrentQuest,
+  (quest) => ({
+    payload: {
+      currentQuest: quest,
+    }
+  })
+)
+
+export {setCurrentGenre, setQuests, setCurrentQuest};

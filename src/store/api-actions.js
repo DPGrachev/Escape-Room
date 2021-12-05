@@ -1,5 +1,5 @@
 import { Genres } from "const";
-import { setQuests } from "./actions";
+import { setCurrentQuest, setQuests } from "./actions";
 
 const GenresAdapter = {
   'adventures' : Genres.Adventures,
@@ -20,4 +20,11 @@ const fetchQuestsAction = () =>
       .then((response) => dispatch(setQuests(response)));
   };
 
-export {fetchQuestsAction};
+const fetchCurrentQuestAction = (questId) =>
+  async (dispatch, _getState, api) => {
+    await api.get(`/quests/${questId}`)
+      .then(response => adaptQuestsToClient(response.data))
+      .then(response => dispatch(setCurrentQuest(response)));
+  };
+
+export {fetchQuestsAction, fetchCurrentQuestAction};

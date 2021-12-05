@@ -1,19 +1,20 @@
 import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
+import { questLevelTranslate } from 'const';
 import * as S from './quest-card.styled';
 
-const QuestCard = ({title, previewImg, level, peopleCount}) => {
+const QuestCard = ({id, title, previewImg, level, peopleCount}) => {
   const [minPeopleCount, maxPeopleCount] = peopleCount;
 
   return (
     <S.QuestItem>
-        <S.QuestItemLink to="/quest">
+        <S.QuestItemLink to={`/quest/${id}`}>
           <S.Quest>
             <S.QuestImage
               src={previewImg}
               width="344"
               height="232"
-              alt="квест Склеп"
+              alt={`Квест ${title}`}
             />
 
             <S.QuestContent>
@@ -26,7 +27,7 @@ const QuestCard = ({title, previewImg, level, peopleCount}) => {
                 </S.QuestFeatureItem>
                 <S.QuestFeatureItem>
                   <IconPuzzle />
-                  {level}
+                  {questLevelTranslate[level]}
                 </S.QuestFeatureItem>
               </S.QuestFeatures>
             </S.QuestContent>

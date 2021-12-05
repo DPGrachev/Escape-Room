@@ -3,6 +3,7 @@ import { createSelector } from 'reselect';
 
 const getCurrentGenre = (state) => state.currentGenre;
 const getQuests = (state) => state.quests;
+const getCurrentQuest = (state) => state.currentQuest;
 
 const getQuestsInCurrentGenre = createSelector(
   getQuests,
@@ -16,4 +17,4 @@ const getQuestsInCurrentGenre = createSelector(
 );
 
 
-export {getCurrentGenre, getQuestsInCurrentGenre};
+export {getCurrentQuest, getCurrentGenre, getQuestsInCurrentGenre};

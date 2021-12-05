@@ -16,7 +16,7 @@ const QuestsCatalog = () => {
       </S.Tabs>
 
       <S.QuestsList>
-        {quests.map(quest => <QuestCard key={quest.id} title={quest.title} previewImg={quest.previewImg} level={quest.level} peopleCount={quest.peopleCount}/> )}
+        {quests.map(quest => <QuestCard key={quest.id} id={quest.id} title={quest.title} previewImg={quest.previewImg} level={quest.level} peopleCount={quest.peopleCount}/> )}
       </S.QuestsList>
     </>
   )
