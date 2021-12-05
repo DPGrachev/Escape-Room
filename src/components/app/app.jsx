@@ -10,6 +10,7 @@ import Home from 'components/home/home';
 import { appTheme } from './common';
 import * as S from './app.styled';
 import { AppRoute } from 'const';
+import NotFoundScreen from 'components/not-found-screen/not-found-screen';
 
 const App = () => (
   <ThemeProvider theme={appTheme}>
@@ -22,8 +23,11 @@ const App = () => (
         <Route exact path={AppRoute.ContactsScreen}>
           <Contacts />
         </Route>
-        <Route path={AppRoute.MainScreen}>
+        <Route exact path={AppRoute.MainScreen}>
           <Home />
+        </Route>
+        <Route>
+          <NotFoundScreen/>
         </Route>
       </Switch>
     </Router>
