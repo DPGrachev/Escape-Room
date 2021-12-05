@@ -21,7 +21,6 @@ const BookingModal = ({onCloseBookingBtnClick}) => {
       phone: phone.current.value,
       isLegal: true
     }
-    console.log(orederPost)
     dispatch(sendNewOrderAction(orederPost, onCloseBookingBtnClick));
   }
 

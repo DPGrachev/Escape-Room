@@ -8,6 +8,7 @@ import { createAPI } from 'services/api';
 import { fetchQuestsAction } from 'store/api-actions';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import 'leaflet/dist/leaflet.css';
 
 const api = createAPI();
 

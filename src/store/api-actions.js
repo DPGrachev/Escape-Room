@@ -36,7 +36,6 @@ const sendNewOrderAction = (orderPost, closeForm) =>
     try{
       await api.post('/orders', orderPost)
       .then((response) => {
-        console.log(response)
         if(response){
           toast.info(SUCCES_SEND_ORDER_MESSAGE);
           closeForm();
